@@ -2,6 +2,7 @@ baseurl = "http://bolobob.github.io/blog/"
 languageCode = "ja-jp"
 title = "勉強ブログ"
 canonifyurls = true
+theme = "angels-ladder"
 
 [params]
   description = "勉強したことを残すブログです"
