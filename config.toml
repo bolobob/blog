@@ -1,3 +1,12 @@
 baseurl = "http://bolobob.github.io/blog/"
 languageCode = "ja-jp"
 title = "勉強ブログ"
+canonifyurls = true
+
+[params]
+  description = "勉強したことを残すブログです"
+  author = "bolobob"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
