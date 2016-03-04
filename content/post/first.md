@@ -4,3 +4,7 @@ draft = false
 title = "first"
 
 +++
+
+# 祝・初投稿
+
+これからブログを書いていく所存
