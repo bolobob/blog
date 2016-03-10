@@ -1,4 +1,4 @@
-baseurl = "http://bolobob.com/blog/"
+baseurl = "http://bolobob.github.io/blog/"
 languageCode = "ja-jp"
 title = "勉強ブログ"
 canonifyurls = true
