@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>勉強ブログ</title>
-    <link>http://bolobob.github.io/blog/</link>
+    <link>http://bolobob.com/blog/</link>
     <description>Recent content on 勉強ブログ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Wed, 02 Mar 2016 00:25:58 +0900</lastBuildDate>
-    <atom:link href="http://bolobob.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://bolobob.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>first</title>
-      <link>http://bolobob.github.io/blog/post/first/</link>
+      <link>http://bolobob.com/blog/post/first/</link>
       <pubDate>Wed, 02 Mar 2016 00:25:58 +0900</pubDate>
       
-      <guid>http://bolobob.github.io/blog/post/first/</guid>
+      <guid>http://bolobob.com/blog/post/first/</guid>
       <description>
 
 &lt;h1 id=&#34;祝-初投稿:e8fb9c67eba912c72729806db31eaa1b&#34;&gt;祝・初投稿&lt;/h1&gt;
