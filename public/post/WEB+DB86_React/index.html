@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    WEB&#43;DB86_React | 勉強ブログ
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://bolobob.github.io/blog/post/WEB&#43;DB86_React/"/>
+
+  
+  <link rel="stylesheet" href="http://bolobob.github.io/blog/css/sanitize.css">
+  <link rel="stylesheet" href="http://bolobob.github.io/blog/css/responsive.css">
+  <link rel="stylesheet" href="http://bolobob.github.io/blog/css/highlight_monokai.css">
+  <link rel="stylesheet" href="http://bolobob.github.io/blog/css/theme.css">
+  <link rel="stylesheet" href="http://bolobob.github.io/blog/css/custom.css">
+  
+  
+  <link href="http://bolobob.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="勉強ブログ" />
+  <link href="http://bolobob.github.io/blog/index.xml" rel="feed" type="application/rss+xml" title="勉強ブログ" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://bolobob.github.io/blog/">勉強ブログ</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>WEB&#43;DB86_React</h1>
+      <div class="meta">
+        May 15, 2016 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<h2 id="web-db-vol-86-reactによるフロントエンド開発の変革:988aa1603baf0ef023ebcaccb2f12e8f">WEB+DB vol.86 Reactによるフロントエンド開発の変革</h2>
+
+<p>JSXTransformer.jsとreact-toolsはどうやら廃止された模様
+<a href="https://facebook.github.io/react/blog/2015/06/12/deprecating-jstransform-and-react-tools.html">https://facebook.github.io/react/blog/2015/06/12/deprecating-jstransform-and-react-tools.html</a></p>
+
+<p>ということで、Babelでやってみる。
+Babelはインストール済みだった。
+自動トランスパイルされないのは面倒なので<code>gulp</code>をインストール。</p>
+
+<pre><code>sudo npm install -g gulp
+</code></pre>
+
+<p>は成功、しかし</p>
+
+<pre><code>sudo npm install --save-dev gulp-babel
+</code></pre>
+
+<p>でエラーになる。
+タスクランナーは今回の勉強範囲とは違うのでいったんスルー。</p>
+
+<h2 id="babelが実行エラーになる:988aa1603baf0ef023ebcaccb2f12e8f">Babelが実行エラーになる</h2>
+
+<pre><code>babel app.js
+</code></pre>
+
+<p>としてもエラーになる。
+実行できるディレクトリーとくらべてみると<code>.babelrc</code>が無いことに気づく。</p>
+
+<pre><code>{
+  &quot;presets&quot;: [&quot;es2015&quot;]
+}
+</code></pre>
+
+<p>を配置すると、実行成功する。</p>
+
+<h2 id="babelが実行エラーになる-jsx編:988aa1603baf0ef023ebcaccb2f12e8f">Babelが実行エラーになる「jsx編」</h2>
+
+<p><a href="https://babeljs.io/docs/plugins/transform-react-jsx/">https://babeljs.io/docs/plugins/transform-react-jsx/</a>
+これが必要なのか？ということでインストール。
+<code>.babelrc</code>に</p>
+
+<pre><code>&quot;plugins&quot;: [&quot;transform-react-jsx&quot;]
+</code></pre>
+
+<p>を追加。
+トランスパイル成功！</p>
+
+<h2 id="jsエラーになる:988aa1603baf0ef023ebcaccb2f12e8f">jsエラーになる</h2>
+
+<p>どうやら<code>react-dom.js</code>も読み込んで、さらに</p>
+
+<pre><code>React.render
+</code></pre>
+
+<p>となっているところを</p>
+
+<pre><code>ReactDOM.render
+</code></pre>
+
+<p>としないとダメな模様。
+１年以上経ってるので仕様変更があったみたい。</p>
+
+      
+      
+      
+    </article>
+    
+
+
+<script type="text/javascript">
+     
+    var disqus_shortname = '';
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+    
+      <span class="next"><a href="http://bolobob.github.io/blog/post/first/" rel="next">first</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="http://bolobob.github.io/blog/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

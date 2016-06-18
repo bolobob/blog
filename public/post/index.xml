@@ -23,5 +23,77 @@
 </description>
     </item>
     
+    <item>
+      <title>WEB&#43;DB86_React</title>
+      <link>http://bolobob.github.io/blog/post/WEB&#43;DB86_React/</link>
+      <pubDate>Sun, 15 May 2016 13:50:40 +0900</pubDate>
+      
+      <guid>http://bolobob.github.io/blog/post/WEB&#43;DB86_React/</guid>
+      <description>
+
+&lt;h2 id=&#34;web-db-vol-86-reactによるフロントエンド開発の変革:988aa1603baf0ef023ebcaccb2f12e8f&#34;&gt;WEB+DB vol.86 Reactによるフロントエンド開発の変革&lt;/h2&gt;
+
+&lt;p&gt;JSXTransformer.jsとreact-toolsはどうやら廃止された模様
+&lt;a href=&#34;https://facebook.github.io/react/blog/2015/06/12/deprecating-jstransform-and-react-tools.html&#34;&gt;https://facebook.github.io/react/blog/2015/06/12/deprecating-jstransform-and-react-tools.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ということで、Babelでやってみる。
+Babelはインストール済みだった。
+自動トランスパイルされないのは面倒なので&lt;code&gt;gulp&lt;/code&gt;をインストール。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo npm install -g gulp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;は成功、しかし&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo npm install --save-dev gulp-babel
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;でエラーになる。
+タスクランナーは今回の勉強範囲とは違うのでいったんスルー。&lt;/p&gt;
+
+&lt;h2 id=&#34;babelが実行エラーになる:988aa1603baf0ef023ebcaccb2f12e8f&#34;&gt;Babelが実行エラーになる&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;babel app.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;としてもエラーになる。
+実行できるディレクトリーとくらべてみると&lt;code&gt;.babelrc&lt;/code&gt;が無いことに気づく。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;presets&amp;quot;: [&amp;quot;es2015&amp;quot;]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;を配置すると、実行成功する。&lt;/p&gt;
+
+&lt;h2 id=&#34;babelが実行エラーになる-jsx編:988aa1603baf0ef023ebcaccb2f12e8f&#34;&gt;Babelが実行エラーになる「jsx編」&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://babeljs.io/docs/plugins/transform-react-jsx/&#34;&gt;https://babeljs.io/docs/plugins/transform-react-jsx/&lt;/a&gt;
+これが必要なのか？ということでインストール。
+&lt;code&gt;.babelrc&lt;/code&gt;に&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;plugins&amp;quot;: [&amp;quot;transform-react-jsx&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;を追加。
+トランスパイル成功！&lt;/p&gt;
+
+&lt;h2 id=&#34;jsエラーになる:988aa1603baf0ef023ebcaccb2f12e8f&#34;&gt;jsエラーになる&lt;/h2&gt;
+
+&lt;p&gt;どうやら&lt;code&gt;react-dom.js&lt;/code&gt;も読み込んで、さらに&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;React.render
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;となっているところを&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ReactDOM.render
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;としないとダメな模様。
+１年以上経ってるので仕様変更があったみたい。&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
