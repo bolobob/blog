@@ -6,7 +6,7 @@
   
   <meta charset="UTF-8">
   <title>
-    tmux設定の覚書 | 勉強ブログ
+    Vagrant&#43;Laravelの環境設定 | 勉強ブログ
   </title>
 
 
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
 
   
-  <link rel="canonical" href="http://bolobob.github.io/blog/post/tmux%E8%A8%AD%E5%AE%9A%E3%81%AE%E8%A6%9A%E6%9B%B8/"/>
+  <link rel="canonical" href="http://bolobob.github.io/blog/post/Vagrant&#43;Laravel%E3%81%AE%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A/"/>
 
   
   <link rel="stylesheet" href="http://bolobob.github.io/blog/css/sanitize.css">
@@ -60,62 +60,66 @@
   
   <main id="single" role="main">
     <div class="article-header">
-      <h1>tmux設定の覚書</h1>
+      <h1>Vagrant&#43;Laravelの環境設定</h1>
       <div class="meta">
-        Jun 18, 2016 &nbsp;
+        Jun 19, 2016 &nbsp;
         
       </div>
     </div>
     <article>
       
 
-<h2 id="反映方法その１:8c622523cd3f561a0cf5dae2f13bce6d">反映方法その１</h2>
+<p>##</p>
 
-<p><a href="http://raichel.hatenablog.com/entry/2015/08/02/185018">達人のtmux.confコピペしたら動かなかった話</a>を参考に。
-とりあえず<code>prefix</code>を設定、反映しようとしたがどうやればいいか分からない。</p>
+<p><a href="vagrant on mac にLaravel Homesteadを入れてみる">http://qiita.com/you-me/items/3886f072cbcbead98733</a>を参考に。</p>
 
-<pre><code>ps aux | head -1 &amp;&amp; ps aux | grep tmux
+<pre><code>$ cd Homestead/
+$ bash init.sh
+Homestead initialized!
 </code></pre>
 
-<p>とすると、プロセスが生きてたので</p>
+<p><code>init.sh</code>は何をしてるかというと、<code>~/.homestead</code>を作りその下に、</p>
 
-<pre><code>kill -9 [該当プロセスID]
+<ul>
+<li>Homestead.yaml</li>
+<li>after.sh</li>
+<li>aliases</li>
+</ul>
+
+<p>をコピーしてる。</p>
+
+<h2 id="composerのインストール:5536d32502e6392d8b322345b06d475c">composerのインストール</h2>
+
+<h3 id="homebrewでインストール:5536d32502e6392d8b322345b06d475c">Homebrewでインストール</h3>
+
+<pre><code>brew install composer
 </code></pre>
 
-<p>として</p>
+<p>失敗するなー</p>
 
-<pre><code>tmux
+<pre><code>brew tap homebrew/php/
 </code></pre>
 
-<p>したら設定が反映された。</p>
+<p>してから再度</p>
 
-<h3 id="反映方法その２:8c622523cd3f561a0cf5dae2f13bce6d">反映方法その２</h3>
-
-<pre><code>bind r source-file ~/.tmux.conf \; display &quot;Reloaded!&quot;
+<pre><code>brew install composer
 </code></pre>
 
-<p>を設定すると<code>c-t r</code>で反映されるように、、、
-<code>c-t</code>の<code>t</code>はプリフィックスなので自身の設定にあわせて変える必要あり。
-デフォルトは<code>b</code>。</p>
+<p>でうまくいった。</p>
 
-<p>文法エラーがあると反映されないっぽい、、、って当然か</p>
+<h4 id="参考:5536d32502e6392d8b322345b06d475c">参考</h4>
 
-<pre><code>setw -g window-status-current-bg orange
-</code></pre>
+<ul>
+<li><a href="http://www.d-wood.com/blog/2015/12/17_7736.html">[PHP] Homebrew で Composer をインストールする</a></li>
+<li><a href="http://qiita.com/saa/items/85ed5e914d424fbf9fd6">brew tapとは</a></li>
+</ul>
 
-<p>どうやら<code>orange</code>は無いみたいで、、、</p>
+<h2 id="vagrant上で改修したくないな:5536d32502e6392d8b322345b06d475c">vagrant上で改修したくないな、、、</h2>
 
-<h2 id="余談:8c622523cd3f561a0cf5dae2f13bce6d">余談</h2>
-
-<p><code>hugo</code>のプレビューができないと思ったら</p>
-
-<pre><code>hugo new post/xxx
-</code></pre>
-
-<p>としてた、<code>.md</code>をつけないといけなかった</p>
-
-<pre><code>hugo new post/xxx.md
-</code></pre>
+<p>と思ったけど、ホストの<code>Code/Laravel/resources/views/welcome.blade.php</code>
+を編集したらうまく反映された。
+どこで<code>Synced Folder</code>の設定をしたのだ？
+<code>scripts/homestead.rb</code>に<code>synced_folder</code>とあるからコレのおかげだろう、きっと</p>
 
       
       
@@ -141,10 +145,10 @@
   
   <nav class="pagination-single">
     
-      <span class="previous">&larr; <a href="http://bolobob.github.io/blog/post/WEB&#43;DB86_React/" rel="prev">WEB&#43;DB86_React</a></span>
+      <span class="previous">&larr; <a href="http://bolobob.github.io/blog/post/tmux%E8%A8%AD%E5%AE%9A%E3%81%AE%E8%A6%9A%E6%9B%B8/" rel="prev">tmux設定の覚書</a></span>
     
     
-      <span class="next"><a href="http://bolobob.github.io/blog/post/Vagrant&#43;Laravel%E3%81%AE%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A/" rel="next">Vagrant&#43;Laravelの環境設定</a> &rarr;</span>
+      <span class="next"><a href="http://bolobob.github.io/blog/post/first/" rel="next">first</a> &rarr;</span>
     
   </nav>
 

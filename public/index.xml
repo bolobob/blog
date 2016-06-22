@@ -24,6 +24,68 @@
     </item>
     
     <item>
+      <title>Vagrant&#43;Laravelの環境設定</title>
+      <link>http://bolobob.github.io/blog/post/Vagrant&#43;Laravel%E3%81%AE%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A/</link>
+      <pubDate>Sun, 19 Jun 2016 10:31:05 +0900</pubDate>
+      
+      <guid>http://bolobob.github.io/blog/post/Vagrant&#43;Laravel%E3%81%AE%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A/</guid>
+      <description>
+
+&lt;p&gt;##&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;vagrant on mac にLaravel Homesteadを入れてみる&#34;&gt;http://qiita.com/you-me/items/3886f072cbcbead98733&lt;/a&gt;を参考に。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd Homestead/
+$ bash init.sh
+Homestead initialized!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;init.sh&lt;/code&gt;は何をしてるかというと、&lt;code&gt;~/.homestead&lt;/code&gt;を作りその下に、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Homestead.yaml&lt;/li&gt;
+&lt;li&gt;after.sh&lt;/li&gt;
+&lt;li&gt;aliases&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;をコピーしてる。&lt;/p&gt;
+
+&lt;h2 id=&#34;composerのインストール:5536d32502e6392d8b322345b06d475c&#34;&gt;composerのインストール&lt;/h2&gt;
+
+&lt;h3 id=&#34;homebrewでインストール:5536d32502e6392d8b322345b06d475c&#34;&gt;Homebrewでインストール&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install composer
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;失敗するなー&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew tap homebrew/php/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;してから再度&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install composer
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;でうまくいった。&lt;/p&gt;
+
+&lt;h4 id=&#34;参考:5536d32502e6392d8b322345b06d475c&#34;&gt;参考&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.d-wood.com/blog/2015/12/17_7736.html&#34;&gt;[PHP] Homebrew で Composer をインストールする&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/saa/items/85ed5e914d424fbf9fd6&#34;&gt;brew tapとは&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;vagrant上で改修したくないな:5536d32502e6392d8b322345b06d475c&#34;&gt;vagrant上で改修したくないな、、、&lt;/h2&gt;
+
+&lt;p&gt;と思ったけど、ホストの&lt;code&gt;Code/Laravel/resources/views/welcome.blade.php&lt;/code&gt;
+を編集したらうまく反映された。
+どこで&lt;code&gt;Synced Folder&lt;/code&gt;の設定をしたのだ？
+&lt;code&gt;scripts/homestead.rb&lt;/code&gt;に&lt;code&gt;synced_folder&lt;/code&gt;とあるからコレのおかげだろう、きっと&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>tmux設定の覚書</title>
       <link>http://bolobob.github.io/blog/post/tmux%E8%A8%AD%E5%AE%9A%E3%81%AE%E8%A6%9A%E6%9B%B8/</link>
       <pubDate>Sat, 18 Jun 2016 21:29:26 +0900</pubDate>
