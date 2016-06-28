@@ -1,7 +1,7 @@
 +++
 class = "post first"
 date = "2016-06-28T22:33:30+09:00"
-tags = []
+tags = ["Atom"]
 title = "Atomのオートインデント"
 type = "post"
 weight = 1
