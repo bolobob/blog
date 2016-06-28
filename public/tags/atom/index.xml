@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Atom on 勉強ブログ</title>
+    <link>http://bolobob.github.io/blog/tags/atom/</link>
+    <description>Recent content in Atom on 勉強ブログ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Tue, 28 Jun 2016 22:33:30 +0900</lastBuildDate>
+    <atom:link href="http://bolobob.github.io/blog/tags/atom/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Atomのオートインデント</title>
+      <link>http://bolobob.github.io/blog/post/Atom%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%88%E3%82%A4%E3%83%B3%E3%83%86%E3%82%99%E3%83%B3%E3%83%88/</link>
+      <pubDate>Tue, 28 Jun 2016 22:33:30 +0900</pubDate>
+      
+      <guid>http://bolobob.github.io/blog/post/Atom%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%88%E3%82%A4%E3%83%B3%E3%83%86%E3%82%99%E3%83%B3%E3%83%88/</guid>
+      <description>
+
+&lt;h2 id=&#34;設定が反映されない:c844ca9e2f7aa82f8b874cb63801611b&#34;&gt;設定が反映されない？&lt;/h2&gt;
+
+&lt;h3 id=&#34;問題:c844ca9e2f7aa82f8b874cb63801611b&#34;&gt;問題&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&#39;atom-text-editor&#39;:
+  &#39;ctrl-i&#39;: &#39;unset!&#39;
+  &#39;ctrl-i&#39;: &#39;editor:auto-indent&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;として再起動しても反映されない、、、&lt;/p&gt;
+
+&lt;h3 id=&#34;原因:c844ca9e2f7aa82f8b874cb63801611b&#34;&gt;原因&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Settings &amp;gt; Keybindings&lt;/code&gt;で&lt;code&gt;ctrl-i&lt;/code&gt;を検索すると&lt;code&gt;Emmet&lt;/code&gt;パッケージと衝突してた。&lt;/p&gt;
+
+&lt;h3 id=&#34;解決:c844ca9e2f7aa82f8b874cb63801611b&#34;&gt;解決&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&#39;.platform-darwin atom-text-editor:not([mini])&#39;:
+  &#39;ctrl-i&#39;: &#39;unset!&#39;
+  &#39;ctrl-i&#39;: &#39;editor:auto-indent&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;としたらうまくいった。&lt;/p&gt;
+
+&lt;h3 id=&#34;余談:c844ca9e2f7aa82f8b874cb63801611b&#34;&gt;余談&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Hugo&lt;/code&gt;の&lt;code&gt;tags&lt;/code&gt;って文字列として書かないとダメなのか&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tags = [&amp;quot;Atom&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
