@@ -6,7 +6,7 @@
   
   <meta charset="UTF-8">
   <title>
-    Atomのオートインデント | 勉強ブログ
+    Hugoで記事削除 | 勉強ブログ
   </title>
 
 
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
 
   
-  <link rel="canonical" href="http://bolobob.github.io/blog/post/Atom%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%88%E3%82%A4%E3%83%B3%E3%83%86%E3%82%99%E3%83%B3%E3%83%88/"/>
+  <link rel="canonical" href="http://bolobob.github.io/blog/post/Hugo%E3%81%A6%E3%82%99%E8%A8%98%E4%BA%8B%E5%89%8A%E9%99%A4/"/>
 
   
   <link rel="stylesheet" href="http://bolobob.github.io/blog/css/sanitize.css">
@@ -60,47 +60,23 @@
   
   <main id="single" role="main">
     <div class="article-header">
-      <h1>Atomのオートインデント</h1>
+      <h1>Hugoで記事削除</h1>
       <div class="meta">
-        Jun 28, 2016 &nbsp;
+        Jun 29, 2016 &nbsp;
         
-          #<a href="http://bolobob.github.io/blog/tags/atom">Atom</a>&nbsp;
+          #<a href="http://bolobob.github.io/blog/tags/hugo">Hugo</a>&nbsp;
         
       </div>
     </div>
     <article>
       
 
-<h2 id="設定が反映されない:c844ca9e2f7aa82f8b874cb63801611b">設定が反映されない？</h2>
+<h2 id="xxx-mdを削除するなら:22c10bb2ccc1d2f75db24d4ef4166f17">xxx.mdを削除するなら</h2>
 
-<h3 id="問題:c844ca9e2f7aa82f8b874cb63801611b">問題</h3>
-
-<pre><code>'atom-text-editor':
-  'ctrl-i': 'unset!'
-  'ctrl-i': 'editor:auto-indent'
+<pre><code>rm content/post/xxx.md
 </code></pre>
 
-<p>として再起動しても反映されない、、、</p>
-
-<h3 id="原因:c844ca9e2f7aa82f8b874cb63801611b">原因</h3>
-
-<p><code>Settings &gt; Keybindings</code>で<code>ctrl-i</code>を検索すると<code>Emmet</code>パッケージと衝突してた。</p>
-
-<h3 id="解決:c844ca9e2f7aa82f8b874cb63801611b">解決</h3>
-
-<pre><code>'.platform-darwin atom-text-editor:not([mini])':
-  'ctrl-i': 'unset!'
-  'ctrl-i': 'editor:auto-indent'
-</code></pre>
-
-<p>としたらうまくいった。</p>
-
-<h3 id="余談:c844ca9e2f7aa82f8b874cb63801611b">余談</h3>
-
-<p><code>Hugo</code>の<code>tags</code>って文字列として書かないとダメなのか</p>
-
-<pre><code>tags = [&quot;Atom&quot;]
-</code></pre>
+<p>してビルドすればOK！</p>
 
       
       
@@ -126,10 +102,10 @@
   
   <nav class="pagination-single">
     
-      <span class="previous">&larr; <a href="http://bolobob.github.io/blog/post/Vagrant&#43;Laravel%E3%81%AE%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A/" rel="prev">Vagrant&#43;Laravelの環境設定</a></span>
+      <span class="previous">&larr; <a href="http://bolobob.github.io/blog/post/Atom%E3%81%AE%E3%82%AA%E3%83%BC%E3%83%88%E3%82%A4%E3%83%B3%E3%83%86%E3%82%99%E3%83%B3%E3%83%88/" rel="prev">Atomのオートインデント</a></span>
     
     
-      <span class="next"><a href="http://bolobob.github.io/blog/post/Hugo%E3%81%A6%E3%82%99%E8%A8%98%E4%BA%8B%E5%89%8A%E9%99%A4/" rel="next">Hugoで記事削除</a> &rarr;</span>
+      <span class="next"><a href="http://bolobob.github.io/blog/post/first/" rel="next">first</a> &rarr;</span>
     
   </nav>
 
