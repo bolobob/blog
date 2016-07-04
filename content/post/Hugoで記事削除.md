@@ -1,7 +1,7 @@
 +++
 class = "post first"
 date = "2016-06-29T00:10:00+09:00"
-tags = ["Hugo"]
+tags = []
 title = "Hugoで記事削除"
 type = "post"
 weight = 1
