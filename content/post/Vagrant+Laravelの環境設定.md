@@ -8,8 +8,6 @@ weight = 1
 
 +++
 
-##
-
 [http://qiita.com/you-me/items/3886f072cbcbead98733](vagrant on mac にLaravel Homesteadを入れてみる)を参考に。
 
 ```
