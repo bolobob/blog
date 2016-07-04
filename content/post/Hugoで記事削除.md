@@ -10,8 +10,6 @@ weight = 1
 
 ## xxx.mdを削除するなら
 
-```
 rm content/post/xxx.md
-```
 
 してビルドすればOK!

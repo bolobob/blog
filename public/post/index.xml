@@ -33,8 +33,7 @@
 
 &lt;h2 id=&#34;xxx-mdを削除するなら:22c10bb2ccc1d2f75db24d4ef4166f17&#34;&gt;xxx.mdを削除するなら&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;rm content/post/xxx.md
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;rm content/post/xxx.md&lt;/p&gt;
 
 &lt;p&gt;してビルドすればOK!&lt;/p&gt;
 </description>
