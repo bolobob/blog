@@ -24,6 +24,18 @@
     </item>
     
     <item>
+      <title>hoge</title>
+      <link>http://bolobob.github.io/blog/post/hoge/</link>
+      <pubDate>Mon, 04 Jul 2016 22:37:38 +0900</pubDate>
+      
+      <guid>http://bolobob.github.io/blog/post/hoge/</guid>
+      <description>
+
+&lt;h2 id=&#34;hoge:3e19b1a3ed52dcfc9895143fe9bdc719&#34;&gt;hoge&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hugoで記事削除</title>
       <link>http://bolobob.github.io/blog/post/Hugo%E3%81%A6%E3%82%99%E8%A8%98%E4%BA%8B%E5%89%8A%E9%99%A4/</link>
       <pubDate>Wed, 29 Jun 2016 00:10:00 +0900</pubDate>
