@@ -69,9 +69,9 @@
     <article>
       
 
-<h2 id="設定が反映されない:f8e57cd31e81cdf62fb3d08ae52106f9">設定が反映されない？</h2>
+<h2 id="設定が反映されない">設定が反映されない？</h2>
 
-<h3 id="問題:f8e57cd31e81cdf62fb3d08ae52106f9">問題</h3>
+<h3 id="問題">問題</h3>
 
 <pre><code>'atom-text-editor':
   'ctrl-i': 'unset!'
@@ -80,11 +80,11 @@
 
 <p>として再起動しても反映されない、、、</p>
 
-<h3 id="原因:f8e57cd31e81cdf62fb3d08ae52106f9">原因</h3>
+<h3 id="原因">原因</h3>
 
 <p><code>Settings &gt; Keybindings</code>で<code>ctrl-i</code>を検索すると<code>Emmet</code>パッケージと衝突してた。</p>
 
-<h3 id="解決:f8e57cd31e81cdf62fb3d08ae52106f9">解決</h3>
+<h3 id="解決">解決</h3>
 
 <pre><code>'.platform-darwin atom-text-editor:not([mini])':
   'ctrl-i': 'unset!'
@@ -93,7 +93,7 @@
 
 <p>としたらうまくいった。</p>
 
-<h3 id="余談:f8e57cd31e81cdf62fb3d08ae52106f9">余談</h3>
+<h3 id="余談">余談</h3>
 
 <p><code>Hugo</code>の<code>tags</code>って文字列として書かないとダメなのか</p>
 
@@ -127,7 +127,7 @@
       <span class="previous">&larr; <a href="http://bolobob.github.io/blog/post/%E8%A8%98%E4%BA%8B%E5%89%8A%E9%99%A4/" rel="prev">記事削除</a></span>
     
     
-      <span class="next"><a href="http://bolobob.github.io/blog/post/first/" rel="next">最初の投稿</a> &rarr;</span>
+      <span class="next"><a href="http://bolobob.github.io/blog/post/ES2015%E3%81%AEexport%E3%81%A8import/" rel="next">ES2015のexportとimport</a> &rarr;</span>
     
   </nav>
 

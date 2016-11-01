@@ -6,7 +6,7 @@
   
   <meta charset="UTF-8">
   <title>
-    記事削除 | 勉強ブログ
+    ES2015のexportとimport | 勉強ブログ
   </title>
 
 
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
 
   
-  <link rel="canonical" href="http://bolobob.github.io/blog/post/%E8%A8%98%E4%BA%8B%E5%89%8A%E9%99%A4/"/>
+  <link rel="canonical" href="http://bolobob.github.io/blog/post/ES2015%E3%81%AEexport%E3%81%A8import/"/>
 
   
   <link rel="stylesheet" href="http://bolobob.github.io/blog/css/sanitize.css">
@@ -60,21 +60,69 @@
   
   <main id="single" role="main">
     <div class="article-header">
-      <h1>記事削除</h1>
+      <h1>ES2015のexportとimport</h1>
       <div class="meta">
-        Jul 4, 2016 &nbsp;
+        Oct 12, 2016 &nbsp;
         
       </div>
     </div>
     <article>
       
 
-<h2 id="xxx-mdを削除するなら">xxx.mdを削除するなら</h2>
+<h2 id="なぜ必要">なぜ必要？</h2>
 
-<pre><code>rm content/post/xxx.md
+<p>これがあることでファイルの分割が可能となった。<br>
+おかげで1つのファイルが巨大になることを避けられる。</p>
+
+<h3 id="参考">参考</h3>
+
+<ul>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/import">import</a></li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/export">export</a></li>
+</ul>
+
+<p>##　使い方</p>
+
+<pre><code class="language-js">export default function combineReducers(reducers) { ... }
 </code></pre>
 
-<p>してビルドすればOK!</p>
+<p>色々なimport, export の仕方がある。
+それぞれどういった特徴、もしくは使わけをするのが良いのか？</p>
+
+<h3 id="はどういったときに使う">{&hellip;}はどういったときに使う？</h3>
+
+<p><code>default</code>を使わずに<code>export</code>したものの場合に使う</p>
+
+<h3 id="asはどういったときに使う">asはどういったときに使う？</h3>
+
+<p>import, export ともに別名にしたいとき、、、つまり？
+名前を短くしたいとか、名前が被らないようにとかかな、、、</p>
+
+<h3 id="はどういったときに使う-1"><code>*</code>はどういったときに使う？</h3>
+
+<p>すべてをimport, exportしたいときか、、、
+逆に言えば必要なものだけを対象にすることもできる</p>
+
+<h3 id="exportでfromってどうやって使う">exportでfromってどうやって使う？</h3>
+
+<p>c.jsがa.js,b.jsのモジュールを読み込む場合、</p>
+
+<pre><code>import * from 'a';
+import * from 'b';
+</code></pre>
+
+<p>と書く必要があるが、
+a.jsが</p>
+
+<pre><code>export * from 'b';
+</code></pre>
+
+<p>と書いておけば</p>
+
+<pre><code>import * from 'a';
+</code></pre>
+
+<p>だけで済む。</p>
 
       
       
@@ -100,10 +148,10 @@
   
   <nav class="pagination-single">
     
-      <span class="previous">&larr; <a href="http://bolobob.github.io/blog/post/Vagrant&#43;Laravel%E3%81%AE%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A/" rel="prev">Vagrant&#43;Laravelの環境設定</a></span>
+      <span class="previous">&larr; <a href="http://bolobob.github.io/blog/post/AtomAutoIndent/" rel="prev">Atomのオートインデント</a></span>
     
     
-      <span class="next"><a href="http://bolobob.github.io/blog/post/AtomAutoIndent/" rel="next">Atomのオートインデント</a> &rarr;</span>
+      <span class="next"><a href="http://bolobob.github.io/blog/post/first/" rel="next">最初の投稿</a> &rarr;</span>
     
   </nav>
 
