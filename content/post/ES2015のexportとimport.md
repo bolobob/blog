@@ -18,7 +18,7 @@ weight = 1
 * [import](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/import)
 * [export](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/export)
 
-##　使い方
+## 使い方
 
 ```js
 export default function combineReducers(reducers) { ... }
