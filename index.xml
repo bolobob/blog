@@ -117,7 +117,7 @@
 &lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/export&#34;&gt;export&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;##　使い方&lt;/p&gt;
+&lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;export default function combineReducers(reducers) { ... }
 &lt;/code&gt;&lt;/pre&gt;
