@@ -6,7 +6,7 @@
   
   <meta charset="UTF-8">
   <title>
-    ES2015のexportとimport | 勉強ブログ
+    Sketch4のリサイズ | 勉強ブログ
   </title>
 
 
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
 
   
-  <link rel="canonical" href="http://bolobob.github.io/blog/post/ES2015%E3%81%AEexport%E3%81%A8import/"/>
+  <link rel="canonical" href="http://bolobob.github.io/blog/post/Sketch4_Resizing/"/>
 
   
   <link rel="stylesheet" href="http://bolobob.github.io/blog/css/sanitize.css">
@@ -60,69 +60,78 @@
   
   <main id="single" role="main">
     <div class="article-header">
-      <h1>ES2015のexportとimport</h1>
+      <h1>Sketch4のリサイズ</h1>
       <div class="meta">
-        Oct 12, 2016 &nbsp;
+        Nov 7, 2016 &nbsp;
         
       </div>
     </div>
     <article>
-      
+      <p>しばらく触らないでいたら戸惑ったのでメモ</p>
 
-<h2 id="なぜ必要">なぜ必要？</h2>
+<p>ステータスバーを配置してリサイズしたら、こんな感じに、、、</p>
 
-<p>これがあることでファイルの分割が可能となった。<br>
-おかげで1つのファイルが巨大になることを避けられる。</p>
 
-<h3 id="参考">参考</h3>
+<figure >
+    
+        <img src="http://bolobob.github.io/blog/images/figure_0001.png" />
+    
+    
+    <figcaption>
+        <h4>大きさが変わらない</h4>
+        
+    </figcaption>
+    
+</figure>
 
-<ul>
-<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/import">import</a></li>
-<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/export">export</a></li>
-</ul>
 
-<h2 id="使い方">使い方</h2>
+<p>リサイズの方法が４種類ある模様</p>
 
-<pre><code class="language-js">export default function combineReducers(reducers) { ... }
-</code></pre>
 
-<p>色々なimport, export の仕方がある。
-それぞれどういった特徴、もしくは使わけをするのが良いのか？</p>
+<figure >
+    
+        <img src="http://bolobob.github.io/blog/images/figure_0002.png" />
+    
+    
+    <figcaption>
+        <h4>リサイズ設定</h4>
+        
+    </figcaption>
+    
+</figure>
 
-<h3 id="はどういったときに使う">{&hellip;}はどういったときに使う？</h3>
 
-<p><code>default</code>を使わずに<code>export</code>したものの場合に使う</p>
+<p>こちらの設定にするとこんな感じに</p>
 
-<h3 id="asはどういったときに使う">asはどういったときに使う？</h3>
 
-<p>import, export ともに別名にしたいとき、、、つまり？
-名前を短くしたいとか、名前が被らないようにとかかな、、、</p>
+<figure >
+    
+        <img src="http://bolobob.github.io/blog/images/figure_0004.png" />
+    
+    
+    <figcaption>
+        <h4>テキストのサイズが変わらない</h4>
+        
+    </figcaption>
+    
+</figure>
 
-<h3 id="はどういったときに使う-1"><code>*</code>はどういったときに使う？</h3>
 
-<p>すべてをimport, exportしたいときか、、、
-逆に言えば必要なものだけを対象にすることもできる</p>
+<p>次はテキストをアウトライン化すると</p>
 
-<h3 id="exportでfromってどうやって使う">exportでfromってどうやって使う？</h3>
 
-<p>c.jsがa.js,b.jsのモジュールを読み込む場合、</p>
+<figure >
+    
+        <img src="http://bolobob.github.io/blog/images/figure_0003.png" />
+    
+    
+    <figcaption>
+        <h4>意図通りのリサイズ</h4>
+        
+    </figcaption>
+    
+</figure>
 
-<pre><code>import * from 'a';
-import * from 'b';
-</code></pre>
-
-<p>と書く必要があるが、
-a.jsが</p>
-
-<pre><code>export * from 'b';
-</code></pre>
-
-<p>と書いておけば</p>
-
-<pre><code>import * from 'a';
-</code></pre>
-
-<p>だけで済む。</p>
 
       
       
@@ -148,10 +157,10 @@ a.jsが</p>
   
   <nav class="pagination-single">
     
-      <span class="previous">&larr; <a href="http://bolobob.github.io/blog/post/AtomAutoIndent/" rel="prev">Atomのオートインデント</a></span>
+      <span class="previous">&larr; <a href="http://bolobob.github.io/blog/post/ES2015%E3%81%AEexport%E3%81%A8import/" rel="prev">ES2015のexportとimport</a></span>
     
     
-      <span class="next"><a href="http://bolobob.github.io/blog/post/Sketch4_Resizing/" rel="next">Sketch4のリサイズ</a> &rarr;</span>
+      <span class="next"><a href="http://bolobob.github.io/blog/post/first/" rel="next">最初の投稿</a> &rarr;</span>
     
   </nav>
 
