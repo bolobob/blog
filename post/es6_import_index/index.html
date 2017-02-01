@@ -6,7 +6,7 @@
   
   <meta charset="UTF-8">
   <title>
-    Sketch4のリサイズ | 勉強ブログ
+    ディレクトリ配下のindex.jsをインポートするには？ | 勉強ブログ
   </title>
 
 
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
 
   
-  <link rel="canonical" href="http://bolobob.github.io/blog/post/Sketch4_Resizing/"/>
+  <link rel="canonical" href="http://bolobob.github.io/blog/post/es6_import_index/"/>
 
   
   <link rel="stylesheet" href="http://bolobob.github.io/blog/css/sanitize.css">
@@ -60,78 +60,66 @@
   
   <main id="single" role="main">
     <div class="article-header">
-      <h1>Sketch4のリサイズ</h1>
+      <h1>ディレクトリ配下のindex.jsをインポートするには？</h1>
       <div class="meta">
-        Nov 7, 2016 &nbsp;
+        Jan 30, 2017 &nbsp;
         
       </div>
     </div>
     <article>
-      <p>しばらく触らないでいたら戸惑ったのでメモ</p>
+      
 
-<p>ステータスバーを配置してリサイズしたら、こんな感じに、、、</p>
+<h2 id="importでディレクトリを指定すると">importでディレクトリを指定すると？</h2>
 
+<pre><code>import reducers from './reducers';
+</code></pre>
 
-<figure >
-    
-        <img src="http://bolobob.github.io/blog/images/figure_0001.png" />
-    
-    
-    <figcaption>
-        <h4>大きさが変わらない</h4>
-        
-    </figcaption>
-    
-</figure>
+<p>といった記述があった<code>./reducers</code>ディレクリ以下には<code>index.js</code>ともう一つファイルが有った。<br>
+どこからインポートするかディレクトリを指定した場合、ディレクトリ配下の<code>index.js</code>が指定されるのでは？と仮設を立てた。</p>
 
+<h2 id="ディレクトリ配下にindex-jsを用意">ディレクトリ配下にindex.jsを用意</h2>
 
-<p>リサイズの方法が４種類ある模様</p>
+<ul>
+<li>import_samples.js</li>
+<li>samples/index.js</li>
+<li>samples/sampleA.js</li>
+</ul>
 
+<h3 id="import-samples-js">import_samples.js</h3>
 
-<figure >
-    
-        <img src="http://bolobob.github.io/blog/images/figure_0002.png" />
-    
-    
-    <figcaption>
-        <h4>リサイズ設定</h4>
-        
-    </figcaption>
-    
-</figure>
+<pre><code>import samples from './samples';
+</code></pre>
 
+<h3 id="samples-index-js">samples/index.js</h3>
 
-<p>こちらの設定にするとこんな感じに</p>
+<pre><code>import { text } from './sampleA';
+console.log(text);
+</code></pre>
 
+<h3 id="samples-samplea-js">samples/sampleA.js</h3>
 
-<figure >
-    
-        <img src="http://bolobob.github.io/blog/images/figure_0004.png" />
-    
-    
-    <figcaption>
-        <h4>テキストのサイズが変わらない</h4>
-        
-    </figcaption>
-    
-</figure>
+<pre><code>export var text = &quot;A&quot;;
+</code></pre>
 
+<p>といった構成で、以下のようにコマンドを打つと</p>
 
-<p>次はテキストをアウトライン化すると</p>
+<pre><code># babel import_samples.js -o bundle.js
+# babel-node bundle.js
+</code></pre>
 
+<pre><code># A
+</code></pre>
 
-<figure >
-    
-        <img src="http://bolobob.github.io/blog/images/figure_0003.png" />
-    
-    
-    <figcaption>
-        <h4>意図通りのリサイズ</h4>
-        
-    </figcaption>
-    
-</figure>
+<p>と出力された。<br>
+この時<code>samples/index.js</code>を<code>samples/hoge.js</code>に変更してみると</p>
 
+<pre><code>...
+Error: Cannot find module './samples'
+...
+</code></pre>
+
+<p>となりエラーになった。<br>
+以上より、仮設は正しいと思われる。</p>
 
       
       
@@ -157,10 +145,10 @@
   
   <nav class="pagination-single">
     
-      <span class="previous">&larr; <a href="http://bolobob.github.io/blog/post/ES2015%E3%81%AEexport%E3%81%A8import/" rel="prev">ES2015のexportとimport</a></span>
+      <span class="previous">&larr; <a href="http://bolobob.github.io/blog/post/Sketch4_Resizing/" rel="prev">Sketch4のリサイズ</a></span>
     
     
-      <span class="next"><a href="http://bolobob.github.io/blog/post/es6_import_index/" rel="next">ディレクトリ配下のindex.jsをインポートするには？</a> &rarr;</span>
+      <span class="next"><a href="http://bolobob.github.io/blog/post/first/" rel="next">最初の投稿</a> &rarr;</span>
     
   </nav>
 

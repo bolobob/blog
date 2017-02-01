@@ -24,6 +24,68 @@
     </item>
     
     <item>
+      <title>ディレクトリ配下のindex.jsをインポートするには？</title>
+      <link>http://bolobob.github.io/blog/post/es6_import_index/</link>
+      <pubDate>Mon, 30 Jan 2017 23:00:13 +0900</pubDate>
+      
+      <guid>http://bolobob.github.io/blog/post/es6_import_index/</guid>
+      <description>
+
+&lt;h2 id=&#34;importでディレクトリを指定すると&#34;&gt;importでディレクトリを指定すると？&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;import reducers from &#39;./reducers&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;といった記述があった&lt;code&gt;./reducers&lt;/code&gt;ディレクリ以下には&lt;code&gt;index.js&lt;/code&gt;ともう一つファイルが有った。&lt;br&gt;
+どこからインポートするかディレクトリを指定した場合、ディレクトリ配下の&lt;code&gt;index.js&lt;/code&gt;が指定されるのでは？と仮設を立てた。&lt;/p&gt;
+
+&lt;h2 id=&#34;ディレクトリ配下にindex-jsを用意&#34;&gt;ディレクトリ配下にindex.jsを用意&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;import_samples.js&lt;/li&gt;
+&lt;li&gt;samples/index.js&lt;/li&gt;
+&lt;li&gt;samples/sampleA.js&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;import-samples-js&#34;&gt;import_samples.js&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;import samples from &#39;./samples&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;samples-index-js&#34;&gt;samples/index.js&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;import { text } from &#39;./sampleA&#39;;
+console.log(text);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;samples-samplea-js&#34;&gt;samples/sampleA.js&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;export var text = &amp;quot;A&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;といった構成で、以下のようにコマンドを打つと&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# babel import_samples.js -o bundle.js
+# babel-node bundle.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;# A
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;と出力された。&lt;br&gt;
+この時&lt;code&gt;samples/index.js&lt;/code&gt;を&lt;code&gt;samples/hoge.js&lt;/code&gt;に変更してみると&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...
+Error: Cannot find module &#39;./samples&#39;
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;となりエラーになった。&lt;br&gt;
+以上より、仮設は正しいと思われる。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Sketch4のリサイズ</title>
       <link>http://bolobob.github.io/blog/post/Sketch4_Resizing/</link>
       <pubDate>Mon, 07 Nov 2016 00:41:25 +0900</pubDate>
