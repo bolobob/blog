@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    ディレクトリ配下のindex.jsをインポートするには？ | 勉強ブログ
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://bolobob.github.io/blog/post/es6_import_index/"/>
+
+  
+  <link rel="stylesheet" href="http://bolobob.github.io/blog/css/sanitize.css">
+  <link rel="stylesheet" href="http://bolobob.github.io/blog/css/responsive.css">
+  <link rel="stylesheet" href="http://bolobob.github.io/blog/css/highlight_monokai.css">
+  <link rel="stylesheet" href="http://bolobob.github.io/blog/css/theme.css">
+  <link rel="stylesheet" href="http://bolobob.github.io/blog/css/custom.css">
+  
+  
+  <link href="http://bolobob.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="勉強ブログ" />
+  <link href="http://bolobob.github.io/blog/index.xml" rel="feed" type="application/rss+xml" title="勉強ブログ" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://bolobob.github.io/blog/">勉強ブログ</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>ディレクトリ配下のindex.jsをインポートするには？</h1>
+      <div class="meta">
+        Jan 30, 2017 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<h2 id="importでディレクトリを指定すると">importでディレクトリを指定すると？</h2>
+
+<pre><code>import reducers from './reducers';
+</code></pre>
+
+<p>といった記述があった<code>./reducers</code>ディレクリ以下には<code>index.js</code>ともう一つファイルが有った。<br>
+どこからインポートするかディレクトリを指定した場合、ディレクトリ配下の<code>index.js</code>が指定されるのでは？と仮設を立てた。</p>
+
+<h2 id="ディレクトリ配下にindex-jsを用意">ディレクトリ配下にindex.jsを用意</h2>
+
+<ul>
+<li>import_samples.js</li>
+<li>samples/index.js</li>
+<li>samples/sampleA.js</li>
+</ul>
+
+<h3 id="import-samples-js">import_samples.js</h3>
+
+<pre><code>import samples from './samples';
+</code></pre>
+
+<h3 id="samples-index-js">samples/index.js</h3>
+
+<pre><code>import { text } from './sampleA';
+console.log(text);
+</code></pre>
+
+<h3 id="samples-samplea-js">samples/sampleA.js</h3>
+
+<pre><code>export var text = &quot;A&quot;;
+</code></pre>
+
+<p>といった構成で、以下のようにコマンドを打つと</p>
+
+<pre><code># babel import_samples.js -o bundle.js
+# babel-node bundle.js
+</code></pre>
+
+<pre><code># A
+</code></pre>
+
+<p>と出力された。<br>
+この時<code>samples/index.js</code>を<code>samples/hoge.js</code>に変更してみると</p>
+
+<pre><code>...
+Error: Cannot find module './samples'
+...
+</code></pre>
+
+<p>となりエラーになった。<br>
+以上より、仮設は正しいと思われる。</p>
+
+      
+      
+      
+    </article>
+    
+
+
+<script type="text/javascript">
+     
+    var disqus_shortname = '';
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://bolobob.github.io/blog/post/Sketch4_Resizing/" rel="prev">Sketch4のリサイズ</a></span>
+    
+    
+      <span class="next"><a href="http://bolobob.github.io/blog/post/original_input_file/" rel="next">オリジナルの画像選択ボタンを作りたい</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="http://bolobob.github.io/blog/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+
