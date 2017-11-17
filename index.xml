@@ -24,6 +24,33 @@
     </item>
     
     <item>
+      <title>オリジナルの画像選択ボタンを作りたい</title>
+      <link>http://bolobob.github.io/blog/post/original_input_file/</link>
+      <pubDate>Fri, 17 Nov 2017 21:07:31 +0900</pubDate>
+      
+      <guid>http://bolobob.github.io/blog/post/original_input_file/</guid>
+      <description>
+
+&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;デフォルトの「ファイルを選択」から文言を変えたい&lt;/li&gt;
+&lt;li&gt;見た目を変えたい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;解決&#34;&gt;解決&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;「ファイルを選択」を非表示にする&lt;/li&gt;
+&lt;li&gt;クリックが出来なくなってしまうので&lt;code&gt;&amp;lt;label&amp;gt;&lt;/code&gt;で囲む&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;label&amp;gt;&lt;/code&gt;内に好きなようにスタイリングしたボタンを設置&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script async src=&#34;//jsfiddle.net/bolobob/m9yc2682/embed/html,css,result/&#34;&gt;&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
       <title>ディレクトリ配下のindex.jsをインポートするには？</title>
       <link>http://bolobob.github.io/blog/post/es6_import_index/</link>
       <pubDate>Mon, 30 Jan 2017 23:00:13 +0900</pubDate>
